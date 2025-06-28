@@ -1,6 +1,6 @@
 # Repositório base para o Projeto 3
 
-Aluno: identifique-se com RA e nome completo
+Aluno: Dênis Baptista Rosas - 032184
 
 ## Breve descrição dos objetivos
 
