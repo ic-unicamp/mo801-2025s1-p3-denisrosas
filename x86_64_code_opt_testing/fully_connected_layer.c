@@ -2,7 +2,7 @@
 #include <time.h>
 #include "matrixes.h"
 
-int fully_connected_layer() {
+inline __attribute__((always_inline)) int fully_connected_layer() {
 
     // 3. Executando os 3 Passos do Forward Pass:
 
