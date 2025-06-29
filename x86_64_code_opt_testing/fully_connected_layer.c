@@ -8,8 +8,8 @@ int fully_connected_layer() {
 
     // Passo 1: Multiplicacao Matriz-Vetor (z = W * x)
     for (int i = 0; i < N; i++) { // Para cada neuronio de saida
-        float sum = 0.0f;
-        
+        int sum = 0;
+
         // Multiplica linha i de W por vetor x
         for (int j = 0; j < N; j++) { 
             sum += W[i][j] * x[j];
@@ -20,12 +20,13 @@ int fully_connected_layer() {
 
     // Passo 2: Adicao do Bias (z = z + b)
     for (int i = 0; i < N; i++) {
-        z[i] = z[i] + b[i]; // Adiciona o bias
+        z[i] = z[i] + b[i]*100; // Adiciona o bias
     }
 
     // Passo 3: Funcao de Ativacao (a = ReLU(z))
+    // Usando ReLU (Rectified Linear Unit) como exemplo: max(0, z)
     for (int i = 0; i < N; i++) {
-        a[i] = (z[i] > 0.0f) ? z[i] : 0.0f;
+        a[i] = (z[i] > 0) ? (float)(z[i]/10000) : 0.0f;
     }
 
     return 0;
