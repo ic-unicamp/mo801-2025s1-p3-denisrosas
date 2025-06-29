@@ -8,14 +8,17 @@ int fully_connected_layer() {
 
     // Passo 1: Multiplicacao Matriz-Vetor (z = W * x)
     for (int i = 0; i < N; i++) { // Para cada neuronio de saida
-        int sum = 0;
+        int sum[4] = {0, 0, 0, 0}; // Inicializa a soma para cada grupo de 4 elementos
 
         // Multiplica linha i de W por vetor x
-        for (int j = 0; j < N; j++) { 
-            sum += W[i][j] * x[j];
+        for (int j = 0; j < N; j=j+4) { // Multiplica linha i de W por vetor x
+            sum[0] += W[i][j] * x[j];
+            sum[1] += W[i][j+1] * x[j+1];
+            sum[2] += W[i][j+2] * x[j+2];
+            sum[3] += W[i][j+3] * x[j+3];
         }
         // Armazena o resultado em z[i]
-        z[i] = sum;
+        z[i] = sum[0] + sum[1] + sum[2] + sum[3]; // Soma os produtos
     }
 
     // Passo 2: Adicao do Bias (z = z + b)
