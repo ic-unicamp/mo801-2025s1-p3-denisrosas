@@ -19,14 +19,14 @@ int fully_connected_layer() {
     }
 
     // Passo 2: Adicao do Bias (z = z + b)
-    for (int i = 0; i < N; i++) {
-        z[i] = z[i] + b[i]; // Adiciona o bias
-    }
+    // for (int i = 0; i < N; i++) {
+    //     z[i] = z[i] + b[i]; // Adiciona o bias
+    // }
 
-    // Passo 3: Funcao de Ativacao (a = ReLU(z))
-    for (int i = 0; i < N; i++) {
-        a[i] = (z[i] > 0.0f) ? z[i] : 0.0f;
-    }
+    // // Passo 3: Funcao de Ativacao (a = ReLU(z))
+    // for (int i = 0; i < N; i++) {
+    //     a[i] = (z[i] > 0.0f) ? z[i] : 0.0f;
+    // }
 
     return 0;
 }
